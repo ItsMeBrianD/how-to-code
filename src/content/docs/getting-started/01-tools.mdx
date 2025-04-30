@@ -1,0 +1,94 @@
+---
+title: "Required Tools"
+---
+
+
+import { Aside } from '@astrojs/starlight/components';
+import Git from "./git.svelte";
+
+The first step to writing code is snsuring you have the proper
+tools installed.
+
+## Text Editors
+<Aside type="tip">
+    You can use just about any text editor for writing code, but some are better suited
+    than others.
+</Aside>
+
+### VSCode
+
+VSCode is a great text editor for writing code. It has a wide range of extensions 
+for working with most programming languages, along with a great community.
+
+It is the most popular text editor for writing code, and is free to use.
+
+[Download VSCode](https://code.visualstudio.com/)
+
+### WebStorm
+
+WebStorm is an "IDE" or "Integrated Development Environment" for writing code. It
+has a ton of great features, but it has cost for profressional usage.
+
+The learning curve is steeper than VSCode, but WebStorm is very popular among developers.
+
+[Download WebStorm](https://www.jetbrains.com/webstorm/)
+
+## Version Control (Git)
+
+### What is Git?
+Git is the industry standard version control system. It is free to use, and has many
+online services for storing your code.
+
+It is crucial to use version control of some kind for most if not all projects - its
+easy to make mistakes, and being in the habit of using version control (and committing often)
+will go a long way towards building a safety net for yourself.
+
+### Why use Git?
+You will work with git in "repositories", which can contain one project, parts of a single project, or an entire set of projects - there are pros and cons to each way of setting it up. 
+Each repository consists of "commits", individual units of work that contain
+a set of changes to your repository. These changes can include adding, moving, deleteing, or modifying the files in your repository,
+it is considered a good practice to commit often to prevent losing work.
+
+When you are working with others, you will all be working in the same repository, which is where _branches_ come in. Each commit
+is aware of it's parents, and "merge" commits take 2 parent commits to produce one results. It is important to note that when you
+"clone" a repository, you are actually setting up another instance of the repository locally, and then linking your local copy to the remote repository.
+
+
+
+
+<Aside type="tip">
+    A great tool for visualizing commit graphs is [GitKraken](https://www.gitkraken.com/). 
+    It is free to use for public repositories, and is a great way to get comfortable with git concepts before
+    working with the command line directly.
+</Aside>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 2rem">
+    <section>
+        This is a common visualization of a repository - the commit graph. Each node represents a commit, and the lines between them
+        represent the parents of each commit.
+
+        In this example, we have the "main" branch which provides the initial commit, and 2 new branches. Each branch has it's own
+        commits, and the "main" branch is the parent to both of the new branches.
+
+        When work is completed on each branch, they are _merged_ back into the "main" branch.
+
+    </section>
+    <Git branches={[{ commitCount: 3 }, { commitCount: 2 } ]}/>
+</div>
+
+### Git Repository Hosting
+
+It is crucial to host your repositories online, as it provides a safe place to store your code. Common places to host your repositories are
+[GitHub](https://github.com/) and [GitLab](https://gitlab.com/).
+
+
+#### GitHub
+
+GitHub is a great place to host your code, and is free to use. It is the most popular git repository host, and a solid choice
+for anybody. You can create your first repository [here](https://github.com/)
+
+
+#### GitLab
+
+GitLab is another popular repository host, and focuses on verbose project planning and DevOps functionality. If you aren't sure
+if you need those things, and you haven't already started using GitLab, I would recommend starting with GitHub. 
