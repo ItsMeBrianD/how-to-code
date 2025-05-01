@@ -1,3 +1,78 @@
 ---
 title: "Version Control"
 ---
+
+import { Aside } from '@astrojs/starlight/components';
+import Git from "./git.svelte";
+
+
+Version control is the practice of tracking changes to files over time. It is a key
+part of any software development process, and is required for most projects.
+
+Properly using version control helps prevent permanent loss of work, and makes it
+easier to collaborate on projects with others.
+
+The most popular version control system is called **Git**.
+
+Git is the industry standard version control system. It is free to use, and has many
+online services for storing your code.
+
+## Understanding Git
+
+### Repositories
+
+You will work with git in "repositories", which can contain one project, parts of a single project,
+or an entire set of projects - there are pros and cons to each way of setting it up.
+
+For this course, we will keep all of our code in one repository, containing the code for all of our projects.
+
+### Commits
+
+A commit represents a unit of work that contains a set of changes to your repository. More concretely, each commit
+contains changes (modification, addition, deletion) to one or more files in your repository. By looking the repository
+history, you can see all of the changes that have been made to your repository - you can also rewind to any point in the past,
+or "revert" commits to undo a specific set of changes.
+
+### Branches
+
+Each commit has a parent, and can be considered a child of it's parent commit. 
+A single commit can have many children, but will only have one or two parents. Commits with two parents are called "merge" commits,
+and are the result of merging two branches together.
+
+A branch is a collection of commits that share a common parent. Every repository starts with one initial commit, 
+and then branches are created from that commit. When work is completed on a branch, it is _merged_ back into the "main" branch.
+
+
+## Putting it all together
+
+<Aside type="tip">
+    If this is getting a little heady and abstract, don't worry - vizualizing commit graphs is a great way to get comfortable with git concepts.
+</Aside>
+
+Each repository consists of "commits", individual units of work that contain
+a set of changes to your repository. These changes can include adding, moving, deleteing, or modifying 
+the files in your repository, it is considered a good practice to commit often to prevent losing work.
+
+When you are working with others, you will all be working in the same repository, which is where _branches_ come in. Each commit
+is aware of it's parents, and "merge" commits take 2 parent commits to produce one results. It is important to note that when you
+"clone" a repository, you are actually setting up another instance of the repository locally, and then linking your local copy to the remote repository.
+
+<Aside type="tip">
+    A great tool for visualizing commit graphs is [GitKraken](https://www.gitkraken.com/). 
+    It is free to use for public repositories, and is a great way to get comfortable with git concepts before
+    working with the command line directly.
+</Aside>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 2rem">
+    <section>
+        This is a common visualization of a repository - the commit graph. Each node represents a commit, and the lines between them
+        represent the parents of each commit.
+
+        In this example, we have the "main" branch which provides the initial commit, and 2 new branches. Each branch has it's own
+        commits, and the "main" branch is the parent to both of the new branches.
+
+        When work is completed on each branch, they are _merged_ back into the "main" branch.
+    </section>
+    <Git branches={[{ commitCount: 3 }, { commitCount: 2 } ]}/>
+    {/* -- Row -- */}
+</div>

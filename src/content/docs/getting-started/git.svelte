@@ -19,18 +19,18 @@
     const yMax = (branches.reduce((a, b) => a.commitCount > b.commitCount ? a : b).commitCount+1) * 15 + 10
 </script>
 
-<svg style:margin-top="0" viewBox="5 5 {15 + 10 + branches.length * 15} {yMax + 30}" xmlns="http://www.w3.org/2000/svg" style="width: 100%;">
+<svg style:margin-top="0" viewBox="5 5 {15 + 10 + branches.length * 15} {yMax + 30}" xmlns="http://www.w3.org/2000/svg" style="width: 100%;" class="git-graph">
     <style>
-        circle {
+        .git-graph circle {
             fill: var(--fill, none);
             stroke: var(--stroke, none);
         }
-        path, line {
+        .git-graph path, .git-graph line {
             fill: none;
             stroke: var(--stroke, lime);
         }
 
-        .base {
+        .git-graph .base {
             --fill: rgb(15,15,45);
             --stroke: rgb(51,51,153);
         }

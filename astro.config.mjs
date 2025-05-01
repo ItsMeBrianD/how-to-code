@@ -11,9 +11,13 @@ import d2 from 'astro-d2';
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    contentIntellisense: true,
+  },
   integrations: [starlight({
-      title: 'My Docs',
+      title: 'TS Zero to Hero',
       plugins: [starlightThemeFlexoki()],
+      tagline: "Bum Bum!",
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
       sidebar: [
           {
